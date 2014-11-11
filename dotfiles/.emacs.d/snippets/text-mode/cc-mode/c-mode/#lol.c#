@@ -1,0 +1,22 @@
+/*
+** my_putstr.c for my strlen in /home/king_j/rendu/Piscine_C_J04
+** 
+** Made by Jimmy KING
+** Login   <king_j@epitech.net>
+** 
+** Started on  Thu Oct  2 10:21:53 2014 Jimmy KING
+** Last update Fri Oct  3 22:50:26 2014 Jimmy KING
+*/
+
+int	my_strlen(char *str)
+{
+  int	n;
+
+  n = 0;
+  while (str[n] != '\0')
+    {
+      n++;
+    }
+  return (n);
+}
+

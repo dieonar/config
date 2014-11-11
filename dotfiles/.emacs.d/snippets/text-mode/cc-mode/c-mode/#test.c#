@@ -1,0 +1,17 @@
+int	my_putstr(char *str)
+{
+  int	n;
+
+  n = 0;
+  while (str[n] != '\0')
+    {
+      my_putchar(str[n]);
+      n = n + 1;
+    }
+}
+
+void	my_putchar(char c)
+{
+  write(1, &c, 1);
+}
+
