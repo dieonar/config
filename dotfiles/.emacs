@@ -104,7 +104,7 @@
 (global-set-key [f9] 'gdbdisp)		;; "disp "
 (global-set-key [f10] 'closegdb)	;; Ferme un buffer
 (global-set-key [f11] 'cppclass)		;; create cpp class
-(global-set-key [f12] 'comment)		;; Comment la ligne
+(global-set-key [A - f12] 'comment)		;; Comment la ligne
 (global-set-key "\C-[[1;2A" 'moveu)	;; Shift + fleche pour
 (global-set-key "\C-[[1;2B" 'moved)	;;  se deplacer 3 fois
 (global-set-key "\C-[[1;2C" 'mover)	;;  plus vite
@@ -189,6 +189,13 @@
  '(whitespace-line ((t (:foreground "#ff0000" :background "#111111" :weight bold))))
  )
 
+(defun iwb ()
+  "indent whole buffer"
+  (interactive)
+  (delete-trailing-whitespace)
+  (ident-region (point-min) (point-max) nill)
+  (untabify (point-min) (point-max)))
+(global-set-key (kbd "<f12>") 'iwb')
 
 (setq user-nickname "king_j")
 (setq user-full-name "king_j")
