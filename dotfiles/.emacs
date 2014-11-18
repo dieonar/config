@@ -24,18 +24,17 @@
 (load "~/.emacs.d/nxhtml/autostart.el")
 (setq mumamo-chunk-coloring 4)
 
-;; Linum: affichage des numeros de ligne sur le
-;; cote. Active avec M-x linum-mode
+;; Linum: affichage des numeros de ligne sur le                                
+;; cote. Active avec M-x linum-mode                                            
 (load "~/.emacs.d/linum.el")
-;; Mettre linum par defaut :
+;; Mettre linum par defaut :                                                   
  (custom-set-variables
   '(linum-mode t))
-;; Change le format et la couleur d'affichage du linum
-(setq linum-format "%d ")
+;; Change le format et la couleur d'affichage du linum                         
+(setq linum-format "%d ")                                                      
 (custom-set-faces
  '(linum ((t (:inherit default :foreground "black" :background "white")))))
-
-
+ 
 ;; yasnippet: permet de cree des macro plus complexe (ex: main [TAB])
 ;; s'integre a l'auto-completition. Pour cree des snippets
 ;; voir le dossier ~/.emacs.d/snippets
@@ -193,10 +192,8 @@
   "indent whole buffer"
   (interactive)
   (delete-trailing-whitespace)
-  (ident-region (point-min) (point-max) nill)
+  (indent-region (point-min) (point-max) nil)
   (untabify (point-min) (point-max)))
-(global-set-key (kbd "<f12>") 'iwb')
 
-(setq user-nickname "king_j")
-(setq user-full-name "king_j")
-(setq user-mail-address "king_j@epitech.net")
+(global-set-key (kbd "<f7>") 'linum-mode)
+(global-set-key (kbd "<f12>") 'iwb)
