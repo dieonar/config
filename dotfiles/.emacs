@@ -27,11 +27,10 @@
 ;; Linum: affichage des numeros de ligne sur le                                
 ;; cote. Active avec M-x linum-mode                                            
 (load "~/.emacs.d/linum.el")
-;; Mettre linum par defaut :                                                   
- (custom-set-variables
-  '(linum-mode t))
+;; Line numbers
+(global-linum-mode 1)
 ;; Change le format et la couleur d'affichage du linum                         
-(setq linum-format "%d ")                                                      
+(setq linum-format "%4d \u2502")                                                 
 (custom-set-faces
  '(linum ((t (:inherit default :foreground "black" :background "white")))))
  
