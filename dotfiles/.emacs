@@ -4,14 +4,15 @@
 ;;(load "std.el")
 (load "~/.emacs.d/std_comment.el")
 
-(load "~/.emacs.d/sr-speedbar.el")
-(require 'sr-speedbar)
-(setq sr-speedbar-toggle t)
-(sr-speedbar-toggle)
+
+;;(load "~/.emacs.d/sr-speedbar.el")
+;;(require 'sr-speedbar)
+;;(setq sr-speedbar-toggle t)
+;;(sr-speedbar-toggle)
 ;; show all file
-(speedbar-add-supported-extension "")
-(add-to-list 'speedbar-fetch-etags-parse-list
-	     '("\\" . speedbar-parse-c-or-c++tag))
+;;(speedbar-add-supported-extension "")
+;;(add-to-list 'speedbar-fetch-etags-parse-list
+;;	     '("\\" . speedbar-parse-c-or-c++tag))
 
 ;;show Prototype
 (load "~/.emacs.d/c-eldoc.el")
