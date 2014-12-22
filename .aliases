@@ -1,0 +1,26 @@
+
+
+#Alias
+alias emacs='emacs -nw'
+alias ne='emacs'
+alias sl='ls'
+alias df='df -h'
+alias cd..='cd ..'
+alias ..='cd ..'
+alias ...='cd ...'
+
+#Shortcut for configs files
+alias zshrc='ne ~/.zshrc && source ~/.zshrc'
+alias bashrc='ne ~/.bashrc && source ~/.bashrc'
+alias aliases='ne ~/.aliases && source ~/.zshrc'
+
+#Others
+alias agent='eval `ssh-agent` ; ssh-add ~/.ssh/master'
+
+function pacman {
+if [ ! $( id -u ) -eq 0 ]; then
+   sudo pacman "$@"
+else
+   pacman "$@"
+fi
+}
