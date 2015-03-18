@@ -45,11 +45,6 @@
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/snippets")
 
-;; Coffee-script
-(load "~/.emacs.d/coffee-mode.el")
-(require 'coffee-mode)
-(custom-set-variables '(coffee-tab-width 4))
-
 ;; auto-complete (MATSUYAMA): menu graphique d'auto-completition
 ;; Active avec M-x auto-complete-mode
 (load "~/.emacs.d/auto-complete.el")
