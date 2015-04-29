@@ -32,7 +32,8 @@
  (custom-set-variables
   '(linum-mode t))
 ;; Change le format et la couleur d'affichage du linum
-(setq linum-format "%4d \u2502")
+;(setq linum-format "%4d \u2502")
+(setq linum-format "%4d |")
 (custom-set-faces
  '(linum ((t (:inherit default :foreground "orange")))))
 (global-linum-mode 1)
