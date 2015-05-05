@@ -34,10 +34,12 @@
 (setq blink-matching-paren-dont-ignore-comments t)
 
 ;; Creating binding:
-;;(global-set-key [f1] 'create_header)
+(global-set-key [f1] 'create_header)
 (global-set-key [f2] 'linum-mode)
 (global-set-key [f3] 'iwb)
 
+(fset 'create_header
+   [C-home down C-right C-right ?\C-[ ?\C-? ?\C-[ ?\C-? ?\C-y C-down C-down C-down ?\C-m ?# ?i ?f ?n ?d ?e ?f ?  ?\C-y ?_ C-left C-left ?\M-u ?\M-u ?\C-e ?\C-m ?# ?  ?d ?e ?f ?i ?n ?e ?  ?\C-y ?_ C-left C-left ?\M-u ?\M-u ?\C-e ?\C-m ?\C-m ?\C-m ?# ?e ?n ?d ?i ?f ?  ?/ ?* ?  ?\C-y ?_ C-left C-left ?! ?\M-u ?\M-u ?\C-e ?  ?* ?/ C-up C-up ?\M-% ?. ?\C-m ?_ ?\C-m ?  ?  ?  ?\C-e up ?\C-x ?o])
 
 (custom-set-variables
  '(backward-delete-char-untabify-method nil)
