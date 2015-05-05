@@ -1,0 +1,75 @@
+int	is_str(char c)
+{
+  if (c != '\t' && (c != '<' && c != '>'))
+    return (1);
+  return (0);
+}
+
+int	words_count(char *str)
+{
+  int	n;
+  int	words;
+
+  n = 0;
+  words = 0;
+  while (str[n])
+    {
+      if (is_str(str[n]))
+	words++;
+      while (is_str(str[n]) && str[n])
+	n++;
+      n++;
+    }
+  return (words);
+}
+
+int	words_lenght(char *str, int word)
+{
+  int	n;
+  int	words;
+  int	lenght;
+
+  n = 0;
+  words = 0;
+  while (str[n])
+    {
+      if (is_str(str[n]))
+	words++;
+      while (is_str(str[n]) && str[n])
+	{
+	  if (words == word)
+	    lenght++;
+	  n++;
+	}
+      n++;
+    }
+  return (lenght);
+}
+
+char	*words_get(char *str, int word)
+{
+  int	n;
+  int	words;
+  char	*tmp;
+  int	i;
+
+  i = 0;
+  n = 0;
+  words = 0;
+  if ((tmp = malloc(words_lenght(str, word) + 1)) == NULL)
+     return (NULL);
+  while (str[n])
+    {
+      if (is_str(str[n]))
+	words++;
+      while (is_str(str[n]) && str[n])
+	{
+	  if (words == word)
+	      tmp[i++] = str[n];
+	  n++;
+	}
+      n++;
+    }
+  tmp[i] = '\0';
+  return (tmp);
+}

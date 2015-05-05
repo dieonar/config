@@ -1,0 +1,29 @@
+int	xputchar(char c)
+{
+  write(1, &c, 1);
+}
+
+int	xputstr(char *str)
+{
+  int	n;
+
+  n = -1;
+  while (str[++n])
+    xputchar(str[n]);
+  return (1);
+}
+
+int	xprintf(char *str, char *str2)
+{
+  int	n;
+
+  n = 0;
+  while (str[n])
+    {
+      if (str[n] == '%')
+	xputstr(str2);
+      else
+	xputchar(str[n]);
+      n++;
+    }
+}

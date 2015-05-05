@@ -1,0 +1,46 @@
+int     check_sign(char *str, int result)
+{
+  int   n;
+  int   count;
+
+  n = 0;
+  count = 0;
+  while (str[n] != '\0' && (str[n] == '-' || str[n] == '+'))
+    {
+      if (str[n] == '-')
+        {
+          count = count + 1;
+        }
+      n = n + 1;
+    }
+  if (n % 2 == 0)
+    return (result);
+  result = -result;
+  return (result);
+}
+
+int     my_atoi(char *str)
+{
+  int   n;
+  int   result;
+  int   negative;
+
+  negative = 1;
+  n = 0;
+  result = 0;
+  while (str[n] != '\0')
+    {
+      if (str[n] > '9')
+        {
+          if (result >= 2147483646 || result <= -2147483647)
+            return (0);
+          return (check_sign(str, result));
+        }
+      if (str[n] != '-' && str[n] != '+')
+        result = (result * 10) + (str[n] - '0');
+      n++;
+    }
+  if (result >= 2147483646 || result <= -2147483647)
+    return (0);
+  return (check_sign(str, result));
+}

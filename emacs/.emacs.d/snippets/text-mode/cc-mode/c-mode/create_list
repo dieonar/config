@@ -1,0 +1,35 @@
+t_list          *list_create()
+{
+  t_list        *new_list;
+
+  if ((new_list = malloc(sizeof(*new_list))) == NULL)
+    return (NULL);
+  new_list->next = new_list;
+  new_list->prev = new_list;
+  return (new_list);
+}
+
+int             list_add(t_list *root, char *key, char *content, int before)
+{
+  t_list        *new;
+
+  if ((new = malloc(sizeof(*new))) == NULL)
+    return (0);
+  new->key = key;
+  new->content = content;
+  if (before)
+    {
+      new->next = root;
+      new->prev = root->prev;
+      root->prev->next = new;
+      root->prev = new;
+    }
+  else
+    {
+      new->next = root->next;
+      new->prev = root;
+      root->next->prev = new;
+      root->next = new;
+    }
+  return (1);
+}

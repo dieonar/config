@@ -1,0 +1,6 @@
+int             fexist(char *file)
+{
+  struct stat   buffer;
+
+  return (stat(file, &buffer) == 0);
+}

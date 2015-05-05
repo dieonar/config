@@ -1,0 +1,40 @@
+char    *xrealloc(char *str, char to_add)
+{
+  char  *new;
+  int   n;
+
+  if ((new = malloc(my_strlen(str) + 2)) == NULL)
+    return (NULL);
+  n = 0;
+  while (str[n])
+    {
+      new[n] = str[n];
+      n++;
+    }
+  new[n] = to_add;
+  new[n + 1] = '\0';
+  return (new);
+}
+
+char    *get_next_line(int fd)
+{
+  int   bytes;
+  char  buffer;
+  char  *tmp;
+
+  if ((tmp = malloc(1)) == NULL)
+    return (NULL);
+  tmp[0] = '\0';
+  while (1)
+    {
+      if ((bytes = read(fd, &buffer, 1)) == 1)
+        tmp = xrealloc(tmp, buffer);
+      else
+        return (NULL);
+      if (buffer == '\n' || buffer == '\0')
+        return (tmp);
+    }
+  if (tmp[0] == '\0')
+    return (NULL);
+  return (tmp);
+}

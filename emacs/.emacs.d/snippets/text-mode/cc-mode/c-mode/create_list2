@@ -1,0 +1,28 @@
+int             list_count(t_list *root)
+{
+  int           count;
+  t_list        *tmp;
+
+  count = 0;
+  tmp = root->next;
+  while (tmp != root)
+    {
+      count++;
+      tmp = tmp->next;
+    }
+  return (count);
+}
+
+void    free_node(t_list *node)
+{
+  xfree(node->key);
+  xfree(node->content);
+  xfree(node);
+}
+
+void    list_delete(t_list *node)
+{
+  node->prev->next = node->next;
+  node->next->prev = node->prev;
+  free_node(node);
+}
